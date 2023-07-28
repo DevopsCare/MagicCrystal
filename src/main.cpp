@@ -1,15 +1,11 @@
+#define LOG_LOCAL_LEVEL ESP_LOG_VERBOSE
+
 #include <Arduino.h>
 #include <WiFi.h>
 #include <Ticker.h>
 #include <esp_now.h>
 #include <esp_wifi.h>
 
-// // Trigger library dep detection
-// #include "WiFiMulti.h"
-// #include "Audio.h"
-// #include "SPI.h"
-// #include "SD.h"
-// #include "FS.h"
 
 // include additional files
 #include "MyHeader.h"
@@ -198,6 +194,8 @@ void promiscuous_rx_cb(void *buf, wifi_promiscuous_pkt_type_t type)
 
 void setup()
 {
+  esp_log_level_set("*", ESP_LOG_VERBOSE);
+
   Serial.begin(115200);
   delay(1000);
   // Set device in STA mode to begin with

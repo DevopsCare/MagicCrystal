@@ -133,3 +133,7 @@ void MyAudioPlayerTask()
 
   audio.loop();
 }
+
+void audio_info(const char *info) {
+  log_d("audio_info: %s", info);
+}
